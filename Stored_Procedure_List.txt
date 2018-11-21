@@ -1,3 +1,6 @@
 CheckIfUserExist - Stored Procedure 
 Input - Email
 Output - Email
+
+RegisterUser - Stored P
+Input - Email, Name, Password
