@@ -18,6 +18,7 @@
             
             <asp:Label ID="lblLoginPrompt" runat="server" Text="Login"></asp:Label>
             <br />
+            <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
             <br />
             <asp:Label ID="lblEmail" runat="server" Text="Email Address"></asp:Label>
             <br />
@@ -29,7 +30,7 @@
             <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btnLogin" runat="server" Text="Login" />
+            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
             <br />
             <hr />
             <br />
