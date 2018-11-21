@@ -1,0 +1,3 @@
+CheckIfUserExist - Stored Procedure 
+Input - Email
+Output - Email
