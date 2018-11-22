@@ -1,6 +1,17 @@
-CheckIfUserExist - Stored Procedure 
+Stored Procedure 
+CheckIfUserExist 
 Input - Email
 Output - Email
 
-RegisterUser - Stored P
-Input - Email, Name, Password
+RegisterUser 
+Input - Email, Name, Password, address, zip, city
+
+TABLES
+
+TP_UserAccounts
+
+TP_UserPreferences 
+email
+LoginPreference  - 3 options: auto-login, fast-login and none
+Theme - Dark, Light, Colorful 
+Privacy - Public, Only Friends, Friends of Friends

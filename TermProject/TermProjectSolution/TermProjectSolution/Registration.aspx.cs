@@ -30,7 +30,44 @@ namespace TermProjectSolution
             }
             else {
                 //Register 
+                DBConnect dbConnection = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "RegisterUser";
+                SqlParameter inputParameter = new SqlParameter("@Email", RegisterEmailTxtBox.Text.ToString());
+                inputParameter.Direction = ParameterDirection.Input;
+                inputParameter.SqlDbType = SqlDbType.NVarChar;
+                objCommand.Parameters.Add(inputParameter);
+                inputParameter = new SqlParameter("@Name", RegisterNameTxtBox.Text.ToString());
+                inputParameter.Direction = ParameterDirection.Input;
+                inputParameter.SqlDbType = SqlDbType.VarChar;
+                objCommand.Parameters.Add(inputParameter);
+                inputParameter = new SqlParameter("@Address", RegisterAddressTxtBox.Text.ToString());
+                inputParameter.Direction = ParameterDirection.Input;
+                inputParameter.SqlDbType = SqlDbType.VarChar;
+                objCommand.Parameters.Add(inputParameter);
+                inputParameter = new SqlParameter("@City", CityTxtBox.Text.ToString());
+                inputParameter.Direction = ParameterDirection.Input;
+                inputParameter.SqlDbType = SqlDbType.VarChar;
+                objCommand.Parameters.Add(inputParameter);
+                inputParameter = new SqlParameter("@Zip", int.Parse(ZipTxtBox.Text.ToString()));
+                inputParameter.Direction = ParameterDirection.Input;
+                inputParameter.SqlDbType = SqlDbType.Int;
+                objCommand.Parameters.Add(inputParameter);
+                inputParameter = new SqlParameter("@Password", RegisterPasswordTxtBox.Text.ToString());
+                inputParameter.Direction = ParameterDirection.Input;
+                inputParameter.SqlDbType = SqlDbType.VarChar;
 
+                objCommand.Parameters.Add(inputParameter);
+               int ResponseReceived = dbConnection.DoUpdateUsingCmdObj(objCommand);
+                if (ResponseReceived == 1)
+                {
+                    PrivacyQuestionsDiv.Visible = true;
+                }
+                else {
+                    //Error
+                }
+                
             }
         }
         public Boolean CheckIfEmailExist(String Email) {
@@ -44,13 +81,19 @@ namespace TermProjectSolution
             objCommand.Parameters.Add(inputParameter);
 
             DataSet EmailDataSet = dbConnection.GetDataSetUsingCmdObj(objCommand);
-            if (EmailDataSet == null && EmailDataSet.Tables[0].Rows.Count == 0)
+            if (EmailDataSet.Tables[0].Rows.Count == 0)
             {
                 return false;
             }
             else {
                 return true;
             }
+        }
+
+        protected void SecurityButton_Click(object sender, EventArgs e)
+        {
+            //Validate Security Question Answer
+
         }
     }
 }
