@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div id="RegisterUserDetails" runat="server">
             <asp:Label runat="server" text="Name*" ID="RegisterNameLabel"></asp:Label>
             <asp:TextBox runat="server" placeholder="Nikhil" id="RegisterNameTxtBox"></asp:TextBox>
             <br />
@@ -53,6 +53,33 @@
             <asp:TextBox runat="server" ID="PrivacyA3TxtBox" placeholder="Nick"></asp:TextBox>
             <br />
             <asp:Button runat="server" ID="SecurityButton" Text="Submit" OnClick="SecurityButton_Click" />
+        </div>
+
+        <div id="PreferencesDiv" runat="server" visible="false">
+             <asp:Label runat="server" text="Preferences" ID="RegisterPreferencesLabel"></asp:Label>
+            <br />
+            <asp:Label runat="server" Text="Login Preference: " ID="LoginPreferenceLabel" />
+            <asp:DropDownList ID="LoginPreferenceDropDown" runat="server">
+                  <asp:ListItem Text="None" Selected="True" Value="NONE"></asp:ListItem>
+                  <asp:ListItem Text="Auto-Login" Value="Auto-Login"></asp:ListItem>
+                  <asp:ListItem Text="Fast-Login"  Value="Fast-Login"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+             <asp:Label runat="server" Text="Privacy Preference: " ID="PrivacyPreferenceLabel" />
+            <asp:DropDownList ID="PrivacyPreferenceDropDown" runat="server">
+                  <asp:ListItem Text="Public" Selected="True" Value="Public"></asp:ListItem>
+                  <asp:ListItem Text="Friends" Value="Friends"></asp:ListItem>
+                  <asp:ListItem Text="Friends-Of-Friends"  Value="FOF"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <asp:Label runat="server" Text="Theme Preference: " ID="ThemePreferenceLabel" />
+            <asp:DropDownList ID="ThemePreferenceDropDown" runat="server">
+                  <asp:ListItem Text="Default" Selected="True" Value="Default"></asp:ListItem>
+                  <asp:ListItem Text="Light" Value="Light"></asp:ListItem>
+                  <asp:ListItem Text="Dark"  Value="Dark"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <asp:Button Text="Submit" ID="SubmitPreferencesButton" runat="server" OnClick="SubmitPreferencesButton_Click" />
         </div>
     </form>
     
