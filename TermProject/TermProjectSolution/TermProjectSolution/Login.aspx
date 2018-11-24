@@ -34,10 +34,17 @@
             <br />
             <hr />
             <br />
-            <asp:HyperLink ID="ForgetPasswordHyperLink" NavigateUrl="" Text="Forgot your password?" runat="server"></asp:HyperLink>
+            <asp:HyperLink ID="ForgetPasswordHyperLink" NavigateUrl="Registration.aspx" Text="Forgot your password?" runat="server"></asp:HyperLink>
             <br />
             <br />
-            <asp:HyperLink ID="RegisterHyperLink" NavigateUrl="Registration.aspx" Text="Create an account?" runat="server"></asp:HyperLink>
+            <asp:HyperLink ID="RegisterHyperLink" NavigateUrl="Registration.aspx" Text="Create an account" runat="server"></asp:HyperLink>
+            <br />
+            <br />
+            <asp:Label ID="lblLoginMode" runat="server" Text="Login Mode"></asp:Label>
+            <br />
+            <asp:RadioButton ID="rdoNormalLogin" GroupName="loginMode" Text="Normal" runat="server" />
+            <asp:RadioButton ID="rdoFastLogin" GroupName="loginMode" Text="Remember Username" runat="server" />
+            <asp:RadioButton ID="rdoAutoLogin" GroupName="loginMode" Text="Auto Login" runat="server" />
         </div>
     </form>
 
