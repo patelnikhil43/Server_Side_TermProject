@@ -25,6 +25,7 @@ namespace TermProjectSolution
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtPassword.Attributes["type"] = "password";
             rdoNormalLogin.Checked = true;
             // Read encrypted password from cookie
             if (!IsPostBack && Request.Cookies["LoginCookie"] != null)
@@ -81,7 +82,7 @@ namespace TermProjectSolution
 
                     plainTextPassword = encoder.GetString(passwordBytes);
                     txtPassword.Text = plainTextPassword;
-                    lblMessage.Text = "Password: " + plainTextPassword;
+                    //lblMessage.Text = "Password: " + plainTextPassword;
                 }
 
                 if (txtPassword.Text != "")
@@ -205,7 +206,12 @@ namespace TermProjectSolution
                     }
                     else
                     {
-
+                        //delete cookies from computer
+                        if(Request.Cookies["LoginCookie"] != null)
+                        {
+                            Response.Cookies.Remove("LoginCookie");
+                        }
+                        
                     }
                 }
                 else

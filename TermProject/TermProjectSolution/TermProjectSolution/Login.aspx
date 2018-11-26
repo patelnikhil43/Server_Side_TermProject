@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="loginStyles.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,21 +17,21 @@
             <asp:TextBox runat="server" placeholder="Password" ID="UserPasswordTxtBox"></asp:TextBox>
             <br />--%>
             
-            <asp:Label ID="lblLoginPrompt" runat="server" Text="Login"></asp:Label>
+            <asp:Label ID="lblLoginPrompt" CssClass="lblLoginPrompt" runat="server" Text="Fakebook Login"></asp:Label>
             <br />
             <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
             <br />
             <asp:Label ID="lblEmail" runat="server" Text="Email Address"></asp:Label>
             <br />
-            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtEmail" CssClass="txtLogin" runat="server"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
             <br />
-            <asp:TextBox ID="txtPassword" TextMode="Password" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" CssClass="txtLogin" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+            <asp:Button ID="btnLogin" CssClass="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
             <br />
             <hr />
             <br />
